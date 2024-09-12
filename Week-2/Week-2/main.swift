@@ -6,6 +6,7 @@
 //
 import Foundation
 
+
 print("Hello, World!")
 
 var person : [String : String] = [
@@ -47,3 +48,24 @@ func sendMoneyClearly(to: String, from : String, amount :Double){
 
 sendMoney("Preet", "Maddy", 1201)
 sendMoneyClearly(to: "Maddy", from: "Preet", amount: 1200.50)
+
+
+// session - 02
+let c1 = Car(model: "Honda Civic 2024", speed: 60)
+print("Model: \(c1.model)")
+print("speed: \(c1.speed)")
+c1.model = "Honda Civic 2025"
+c1.accelerate()
+c1.accelerate()
+c1.accelerate()
+print("Model: \(c1.model)")
+print("speed: \(c1.speed)")
+c1.brake()
+print("speed: \(c1.speed)")
+
+
+let cir1 = Circle(radius: 10.5)
+print(cir1.area)
+cir1.radius = 5
+print(cir1.area)
+// you cant modify -> cir1.area = 4.232
