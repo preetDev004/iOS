@@ -1,30 +1,30 @@
-//
 //  main.swift
 //  Assignment01
 //
 //  Created by Preet Patel on 17/09/24.
 //
-
 import Foundation
 
-class Customer{
+class Customer : CustomStringConvertible{
     let name : String
-    let email : String // when customer sign-up the email can't be changed
+    let email : String = "name@gmail.com" // when customer sign-up the email can't be changed
     var city : String // May change on long-time
-    var creditCard : Int? // Customer can change the credit card later
-    var description : CustomStringConvertible{
+    var creditCard : Int? = nil // Customer can change the credit card later
+    var description : String{
         // if any detail of the customer is updated the description also gets updated
         get{
-            return "Name: \(name)\nEmail: \(email)\nCity: \(city)\nCredit Card: \(creditCard != nil ? "\(creditCard!)" : "No credit card provided.")"
+            return "Name: \(name)\nEmail: \(email)\nCity: \(city)\nCredit Card: \(creditCard ?? "No credit card provided.")"
         }
+            
     }
-    //TODO: ASK PROF ABOUT ONE CONSTRUCTOR OVER MULTIPTIPLE
-    // Giving default values for email and credit card!
-    init(name: String, email: String = "name@gmail.com", city: String, creditCard: Int? = nil) {
+    init(name: String, city: String, creditCard: Int?) {
         self.name = name
-        self.email = email
         self.city = city
         self.creditCard = creditCard
+    }
+    init(name: String, city: String) {
+        self.name = name
+        self.city = city
     }
     
     
@@ -55,7 +55,14 @@ class RoomReservation{
         self.customer = customer
         self.dailyRate = dailyRate
         self.numOfDays = numOfDays
-        self.taxRate = (self.customer.city == "New York City" ? 5.875: 2)
+        // self.taxRate = self.customer.city == "New York City" ? 5.875 : 2
+        if self.customer.city == "New York City" {
+            self.taxRate = 5.875
+        }
+        else{
+            self.taxRate = 2
+        }
+        
     }
     
     func printInvoice(){
@@ -63,7 +70,7 @@ class RoomReservation{
         print("===== INVOICE =====")
         print("===================")
         print("---Customer Details---")
-        print(self.customer.description)
+        print(self.customer)
         print("---Room Details---")
         print("Daily Rate: $\(self.dailyRate)")
         print("Length of stay: \(self.numOfDays) days")
@@ -106,7 +113,7 @@ class ConferenceRoomReservation : RoomReservation{
         print("===== INVOICE =====")
         print("===================")
         print("---Customer Details---")
-        print(self.customer.description)
+        print(self.customer)
         print("---Event Details---")
         print("Event Name: \(self.eventName)")
         print("Length \(self.numOfDays) days")
@@ -131,7 +138,4 @@ var c3 = Customer(name: "Kabir", email: "kbir@gmail.com", city: "New York City",
 //res1.printInvoice()
 var services : [String : Double] = ["Catering" : 1375.99, "A/V Equipment": 250.0,  "Printing Services": 80.5]
 var cRes1 = ConferenceRoomReservation(customer: c3, eventName: "Toronto Anime Festival", numOfAttendees: 35, numOfDays: 2, additionalServices: services)
-cRes1.printInvoice()
-
-cRes1.addService(serviceName: "Pedicure", cost: 1200)
 cRes1.printInvoice()
