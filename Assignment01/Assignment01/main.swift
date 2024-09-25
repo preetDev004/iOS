@@ -1,35 +1,34 @@
 //  main.swift
 //  Assignment01
-//
 //  Created by Preet Patel on 17/09/24.
-//
 import Foundation
 
+// Customer Class
 class Customer : CustomStringConvertible{
     let name : String
-    let email : String = "name@gmail.com" // when customer sign-up the email can't be changed
+    let email : String // when customer sign-up the email can't be changed
     var city : String // May change on long-time
     var creditCard : Int? = nil // Customer can change the credit card later
     var description : String{
         // if any detail of the customer is updated the description also gets updated
         get{
-            return "Name: \(name)\nEmail: \(email)\nCity: \(city)\nCredit Card: \(creditCard ?? "No credit card provided.")"
+            return "Name: \(name)\nEmail: \(email)\nCity: \(city)\nCredit Card: \(creditCard != nil ? "\(creditCard!)" : "No credit card provided.")"
         }
-            
     }
     init(name: String, city: String, creditCard: Int?) {
         self.name = name
+        self.email = self.name.lowercased() + "@gmail.com"
         self.city = city
         self.creditCard = creditCard
     }
     init(name: String, city: String) {
         self.name = name
+        self.email = self.name.lowercased() + "@gmail.com"
         self.city = city
     }
-    
-    
 }
 
+// RoomReservation Class
 class RoomReservation{
     let customer : Customer // Reservation is only done by one customer not-changeable
     let dailyRate : Double // reservation is booked on a fix daily rate
@@ -55,14 +54,7 @@ class RoomReservation{
         self.customer = customer
         self.dailyRate = dailyRate
         self.numOfDays = numOfDays
-        // self.taxRate = self.customer.city == "New York City" ? 5.875 : 2
-        if self.customer.city == "New York City" {
-            self.taxRate = 5.875
-        }
-        else{
-            self.taxRate = 2
-        }
-        
+        self.taxRate = self.customer.city == "New York City" ? 5.875 : 2
     }
     
     func printInvoice(){
@@ -81,6 +73,7 @@ class RoomReservation{
     
 }
 
+// ConferenceRoomReservation Class
 class ConferenceRoomReservation : RoomReservation{
     let eventName : String
     let numOfAttendees : Int
@@ -103,10 +96,12 @@ class ConferenceRoomReservation : RoomReservation{
     }
     
     func addService(serviceName: String, cost : Double){
-        if self.additionalServices[serviceName] == nil{
-            self.additionalServices[serviceName] = cost
+        if self.additionalServices[serviceName] != nil{
+            print("\(serviceName) already exists in the list of services!\n")
+            return
         }
-       
+        self.additionalServices[serviceName] = cost
+        print("\(serviceName) added to the list of services!\n")
     }
     override func printInvoice(){
         print("===================")
@@ -126,16 +121,19 @@ class ConferenceRoomReservation : RoomReservation{
         }
         print("Total: $\(self.total)\n")
     }
-    
 }
 
+// Testing the Classes:
+var customer1 = Customer(name: "Preet", city: "Mumbai")
+var customer2 = Customer(name: "Maddy", city: "New York City", creditCard: 1001)
 
-var c1 = Customer(name: "Preet", city: "Delhi")
-var c2 = Customer(name: "Maddy", email: "maddy@gmail.com", city: "Mumbai", creditCard: 1234)
-var c3 = Customer(name: "Kabir", email: "kbir@gmail.com", city: "New York City", creditCard: 1001)
+var roomReservation = RoomReservation(customer: customer2, dailyRate: 132.50, numOfDays: 4)
 
-//var res1 = RoomReservation(customer: c1, dailyRate: 341.5, numOfDays: 3)
-//res1.printInvoice()
-var services : [String : Double] = ["Catering" : 1375.99, "A/V Equipment": 250.0,  "Printing Services": 80.5]
-var cRes1 = ConferenceRoomReservation(customer: c3, eventName: "Toronto Anime Festival", numOfAttendees: 35, numOfDays: 2, additionalServices: services)
-cRes1.printInvoice()
+var services : [String: Double] = ["Catering" : 2150, "Power Banks": 950.78, "A/V Equipments": 521.43]
+var confRoomReservation = ConferenceRoomReservation(customer: customer1, eventName: "Hack The North",
+                                                 numOfAttendees: 72, numOfDays: 3, additionalServices: services)
+roomReservation.printInvoice()
+
+confRoomReservation.addService(serviceName: "Power Banks", cost: 870.56)
+
+confRoomReservation.printInvoice()
