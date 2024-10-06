@@ -12,7 +12,6 @@ struct ContentView: View {
         VStack {
             HStack{
                 Image(systemName: "chevron.down")
-                    
                     .foregroundStyle(.white)
                     .font(.system(size: 24))
                 
