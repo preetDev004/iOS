@@ -1,4 +1,3 @@
-//
 //  ContentView.swift
 //  PODCAST-PREET
 //
@@ -8,7 +7,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
+        // Main view VStack
         VStack {
+            
+            // Top Details bar with share icon
             HStack{
                 Image(systemName: "chevron.down")
                     .foregroundStyle(.white)
@@ -28,9 +31,11 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 24))
             }
-            .padding(.init(top: 0, leading: 8, bottom: 0, trailing: 8))
+            .padding(.horizontal, 8)
+            
             Spacer()
             
+            // Podcast cover Image
             Image(.podcast)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -38,6 +43,8 @@ struct ContentView: View {
                 .padding(8)
             
             Spacer()
+            
+            // Podcast title with add to playlist button
             HStack{
                 VStack(alignment: .leading){
                     Text("Ep 1: Too Close to See?")
@@ -59,13 +66,14 @@ struct ContentView: View {
             .padding(8)
             .frame(maxWidth: .infinity, alignment: .leading)
             
+            // Playing timeline
             Rectangle()
                 .foregroundStyle(.white)
                 .frame(height: 4)
                 .cornerRadius(5)
                 .padding(8)
              
-           
+           // Played time & total time
             HStack{
                 Text("00:00")
                     .font(.system(size: 14))
@@ -75,8 +83,9 @@ struct ContentView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
             }
-            .padding(.init(top: 0, leading: 8, bottom: 0, trailing: 8))
+            .padding(.horizontal,8)
             
+            // Playing, forward 10 seconds, backword 10 seconds icon.
             HStack{
                 Image(systemName: "gobackward.10")
                     .fontWeight(.semibold)
@@ -97,10 +106,11 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 28))
             }
-            .padding(.init(top: 8, leading: 8, bottom: 0, trailing: 8))
+            .padding(.horizontal, 8)
             
             Spacer()
             
+            // Scrollview having the description of the podcast
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("About the episode")
@@ -108,7 +118,7 @@ struct ContentView: View {
                         .font(.system(size: 18, weight: .semibold))
                     
                     Text("Theirs was a close-knit family, living in a small neighbourhood. And yet, when six suspicious deaths happened, no one raised even an eyebrow. Least of all, suspected their favourite daughter-in-law - Jolly.")
-                        .font(.system(size: 14))
+                        .font(.system(size: 15))
                         .foregroundStyle(Color(red:220/255, green: 220/255, blue: 220/255))
 
                 }
@@ -118,7 +128,6 @@ struct ContentView: View {
             .frame(height: 100) // Fixed height of 100
             .background(Color(red:24/255, green:24/255, blue:24/255))
             .cornerRadius(8)
-            .scrollIndicators(.hidden)
             
         }
         .padding()
