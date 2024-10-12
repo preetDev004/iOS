@@ -10,44 +10,36 @@ struct ContentView: View {
         
         // Main view VStack
         VStack {
-            
-            // Top Details bar with share icon
-            HStack{
-                Image(systemName: "chevron.down")
-                    .foregroundStyle(.white)
-                    .font(.system(size: 24))
-                
-                Spacer()
-                
-                Text("Indian Crime Podcast")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 16))
-                 
-                Spacer()
-                
-                Image(systemName: "square.and.arrow.up")
-                   
-                    .foregroundStyle(.white)
-                    .font(.system(size: 24))
-            }
-            .padding(.horizontal, 8)
-            
             Spacer()
-            
             // Podcast cover Image
             Image(.podcast)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(5)
                 .padding(8)
             
-            Spacer()
+            // Played time & total time
+             HStack{
+                 Text("00:00")
+                     .font(.system(size: 14))
+                     .foregroundStyle(.white)
+                 
+                 // Playing timeline
+                 Rectangle()
+                     .foregroundStyle(.white)
+                     .frame(height: 4)
+        
+                 
+                 Text("22:35")
+                     .font(.system(size: 14))
+                     .foregroundStyle(.white)
+             }
+             .padding(.horizontal,8)
             
+            Spacer()
             // Podcast title with add to playlist button
             HStack{
                 VStack(alignment: .leading){
-                    Text("Ep 1: Too Close to See?")
+                    Text("Ep 1: Too Close to See? (ICP)")
                         .font(.system(size: 28))
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
@@ -58,57 +50,18 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                Image(systemName: "plus.circle")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 28))
+                HStack(alignment: .bottom){
+                    Image(systemName: "plus.circle")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 28))
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 28))
+                }
+                
             }
             .padding(8)
             .frame(maxWidth: .infinity, alignment: .leading)
-            
-            // Playing timeline
-            Rectangle()
-                .foregroundStyle(.white)
-                .frame(height: 4)
-                .cornerRadius(5)
-                .padding(8)
-             
-           // Played time & total time
-            HStack{
-                Text("00:00")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                Spacer()
-                Text("22:35")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-            }
-            .padding(.horizontal,8)
-            
-            // Playing, forward 10 seconds, backword 10 seconds icon.
-            HStack{
-                Image(systemName: "gobackward.10")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 28))
-                
-                Spacer()
-                
-                Image(systemName: "play.circle.fill")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 62))
-                
-                Spacer()
-                
-                Image(systemName: "goforward.10")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 28))
-            }
-            .padding(.horizontal, 8)
-            
-            Spacer()
             
             // Scrollview having the description of the podcast
             ScrollView {
@@ -127,7 +80,32 @@ struct ContentView: View {
             .padding(8)
             .frame(height: 100) // Fixed height of 100
             .background(Color(red:24/255, green:24/255, blue:24/255))
-            .cornerRadius(8)
+           
+            Spacer()
+            // Playing, forward 10 seconds, backword 10 seconds icon.
+            HStack{
+                Image(systemName: "gobackward.10")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .font(.system(size: 38))
+                
+                Spacer()
+                
+                Image(systemName: "play.fill")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .font(.system(size: 54))
+                
+                Spacer()
+                
+                Image(systemName: "goforward.10")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .font(.system(size: 38))
+            }
+            .padding(.horizontal, 8)
+            
+            Spacer()
             
         }
         .padding()
