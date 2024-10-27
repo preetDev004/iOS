@@ -54,21 +54,26 @@ struct ContentView: View {
                 
             
             Button("Calculate"){
-               if let mUsage = Double(morningUsageUI), let eUsage = Double(eveningUsageUI){
-                   
-                   isReceipt = true
-                   morningCost = mUsage * 0.05
-                   eveningCost = eUsage * 0.119
-                   totalUsage = mUsage + eUsage
-                   totalCost = morningCost + eveningCost
-                   rebateAmount = 0
-                   if (isEnergyRebate){
-                       rebateAmount = totalCost * 0.08
-                   }
-               }else{
-                   isReceipt = false
-               }
+                if let mUsage = Double(morningUsageUI), let eUsage = Double(eveningUsageUI){
+                    
+                    isReceipt = true
+                    morningCost = mUsage * 0.05
+                    eveningCost = eUsage * 0.119
+                    totalUsage = mUsage + eUsage
+                    totalCost = morningCost + eveningCost
+                    rebateAmount = 0
+                    if (isEnergyRebate){
+                        rebateAmount = totalCost * 0.08
+                    }
+                }else{
+                    isReceipt = false
+                }
             }
+            .buttonStyle(PlainButtonStyle())
+            .padding()
+            .background(.black)
+            .foregroundStyle(.white)
+            .cornerRadius(8)
             Spacer()
             
             if(isReceipt){
