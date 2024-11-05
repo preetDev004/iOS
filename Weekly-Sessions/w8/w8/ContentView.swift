@@ -69,25 +69,24 @@ struct ContentView: View {
                         HStack{
                             VStack(alignment: .leading){
                                 Text(city)
-                                Button("Update"){
-                                    if(cityFormUI != ""){
-                                        cities[index] = cityFormUI
-                                        cityFormUI = ""
-                                    }
-                                }
-                                .buttonStyle(.borderless)
+                                
                             }
                             Spacer()
-                            
-                            Button("Delete"){
-                                cities.remove(at: index)
+                            Button("Update"){
+                                if(cityFormUI != ""){
+                                    cities[index] = cityFormUI
+                                    cityFormUI = ""
+                                }
                             }
                             .buttonStyle(.borderless)
-                            .foregroundStyle(.red)
-                            
+                                                        
                         }
                        
                     }
+                    .onDelete(perform: {
+                        indexSet in
+                        cities.remove(atOffsets: indexSet)
+                    })
                 } header :{
                     Text("Cities")
                 } footer :{
@@ -95,6 +94,7 @@ struct ContentView: View {
                 }
                
             }
+            
         }
     }
 }
