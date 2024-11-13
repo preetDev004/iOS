@@ -1,14 +1,14 @@
 //
-//  APPApp.swift
-//  APP
+//  userLocationApp.swift
+//  userLocation
 //
-//  Created by Preet Patel on 04/11/24.
+//  Created by Preet Patel on 13/11/24.
 //
 
 import SwiftUI
 
 @main
-struct APPApp: App {
+struct userLocationApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

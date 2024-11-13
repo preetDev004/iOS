@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		EDBCE3F82CD953FA0032F38F /* APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED53C6C32CE527E30093F828 /* userLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = userLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EDBCE3FA2CD953FA0032F38F /* APP */ = {
+		ED53C6C52CE527E30093F828 /* userLocation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = APP;
+			path = userLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EDBCE3F52CD953FA0032F38F /* Frameworks */ = {
+		ED53C6C02CE527E30093F828 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDBCE3EF2CD953FA0032F38F = {
+		ED53C6BA2CE527E20093F828 = {
 			isa = PBXGroup;
 			children = (
-				EDBCE3FA2CD953FA0032F38F /* APP */,
-				EDBCE3F92CD953FA0032F38F /* Products */,
+				ED53C6C52CE527E30093F828 /* userLocation */,
+				ED53C6C42CE527E30093F828 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EDBCE3F92CD953FA0032F38F /* Products */ = {
+		ED53C6C42CE527E30093F828 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDBCE3F82CD953FA0032F38F /* APP.app */,
+				ED53C6C32CE527E30093F828 /* userLocation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDBCE3F72CD953FA0032F38F /* APP */ = {
+		ED53C6C22CE527E30093F828 /* userLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDBCE4062CD953FC0032F38F /* Build configuration list for PBXNativeTarget "APP" */;
+			buildConfigurationList = ED53C6D12CE527E50093F828 /* Build configuration list for PBXNativeTarget "userLocation" */;
 			buildPhases = (
-				EDBCE3F42CD953FA0032F38F /* Sources */,
-				EDBCE3F52CD953FA0032F38F /* Frameworks */,
-				EDBCE3F62CD953FA0032F38F /* Resources */,
+				ED53C6BF2CE527E30093F828 /* Sources */,
+				ED53C6C02CE527E30093F828 /* Frameworks */,
+				ED53C6C12CE527E30093F828 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EDBCE3FA2CD953FA0032F38F /* APP */,
+				ED53C6C52CE527E30093F828 /* userLocation */,
 			);
-			name = APP;
+			name = userLocation;
 			packageProductDependencies = (
 			);
-			productName = APP;
-			productReference = EDBCE3F82CD953FA0032F38F /* APP.app */;
+			productName = userLocation;
+			productReference = ED53C6C32CE527E30093F828 /* userLocation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EDBCE3F02CD953FA0032F38F /* Project object */ = {
+		ED53C6BB2CE527E20093F828 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					EDBCE3F72CD953FA0032F38F = {
+					ED53C6C22CE527E30093F828 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
-			buildConfigurationList = EDBCE3F32CD953FA0032F38F /* Build configuration list for PBXProject "APP" */;
+			buildConfigurationList = ED53C6BE2CE527E30093F828 /* Build configuration list for PBXProject "userLocation" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = EDBCE3EF2CD953FA0032F38F;
+			mainGroup = ED53C6BA2CE527E20093F828;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = EDBCE3F92CD953FA0032F38F /* Products */;
+			productRefGroup = ED53C6C42CE527E30093F828 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDBCE3F72CD953FA0032F38F /* APP */,
+				ED53C6C22CE527E30093F828 /* userLocation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EDBCE3F62CD953FA0032F38F /* Resources */ = {
+		ED53C6C12CE527E30093F828 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDBCE3F42CD953FA0032F38F /* Sources */ = {
+		ED53C6BF2CE527E30093F828 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EDBCE4042CD953FC0032F38F /* Debug */ = {
+		ED53C6CF2CE527E50093F828 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		EDBCE4052CD953FC0032F38F /* Release */ = {
+		ED53C6D02CE527E50093F828 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,16 +244,17 @@
 			};
 			name = Release;
 		};
-		EDBCE4072CD953FC0032F38F /* Debug */ = {
+		ED53C6D22CE527E50093F828 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"APP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"userLocation/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -264,7 +265,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.preet.APP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preet.userLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -272,16 +273,17 @@
 			};
 			name = Debug;
 		};
-		EDBCE4082CD953FC0032F38F /* Release */ = {
+		ED53C6D32CE527E50093F828 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"APP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"userLocation/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.preet.APP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.preet.userLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -303,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDBCE3F32CD953FA0032F38F /* Build configuration list for PBXProject "APP" */ = {
+		ED53C6BE2CE527E30093F828 /* Build configuration list for PBXProject "userLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDBCE4042CD953FC0032F38F /* Debug */,
-				EDBCE4052CD953FC0032F38F /* Release */,
+				ED53C6CF2CE527E50093F828 /* Debug */,
+				ED53C6D02CE527E50093F828 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDBCE4062CD953FC0032F38F /* Build configuration list for PBXNativeTarget "APP" */ = {
+		ED53C6D12CE527E50093F828 /* Build configuration list for PBXNativeTarget "userLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDBCE4072CD953FC0032F38F /* Debug */,
-				EDBCE4082CD953FC0032F38F /* Release */,
+				ED53C6D22CE527E50093F828 /* Debug */,
+				ED53C6D32CE527E50093F828 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EDBCE3F02CD953FA0032F38F /* Project object */;
+	rootObject = ED53C6BB2CE527E20093F828 /* Project object */;
 }
