@@ -7,13 +7,11 @@
 import Foundation
 import FirebaseFirestore
 
-struct Student : Codable{
+struct Student : Codable, Identifiable{
     @DocumentID
     var id: String?
     
     var name: String
-    var age: Int
-    var email: String
     var gpa:Double
     var isDiplomaLevel:Bool
 }
