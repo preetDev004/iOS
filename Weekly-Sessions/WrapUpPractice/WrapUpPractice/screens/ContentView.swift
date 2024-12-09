@@ -39,7 +39,7 @@ struct AllSongsView: View {
         }
         
     }
-    func getAllSongs(){
+    func getAllSongs() {
         songs.removeAll()
         db.collection("songs").getDocuments(){
             (snapshot, error) in
@@ -67,8 +67,11 @@ struct AllSongsView: View {
         db.collection("songs").document(id).delete(){
             (error) in
             if error == nil{
+                if let index = songs.firstIndex(where: { $0.id == id }) {
+                    songs.remove(at: index)
+                }
                 print("Deleted successfully!")
-                getAllSongs()
+                
             }
             else{
                 print("Got an Error!")
@@ -127,12 +130,9 @@ struct AllSongsView: View {
                                 }
                                 .foregroundStyle(.red)
                                 .buttonStyle(.borderless)
-                          
                             }
-                           
-                        }.navigationTitle("Wrapped")
-                        
-                        
+                        }
+                        .navigationTitle("Wrapped")
                         
                     }.onDelete(perform: {
                         indexSet in
@@ -141,16 +141,20 @@ struct AllSongsView: View {
                         deleteSong(id: removedSong[0].id)
                         
                     })
-                }
-                
-                .onAppear(){
+                }.refreshable {
                     getAllSongs()
                 }
+                .onAppear {
+                    if songs.isEmpty {
+                        getAllSongs()
+                    }
+                }
             }
-            
         }
         
+        
     }
+    
 }
 
 #Preview {
